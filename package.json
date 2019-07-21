@@ -1,0 +1,26 @@
+{
+  "name": "table-system-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "serve.js",
+  "dependencies": {
+    "koa": "^2.7.0",
+    "koa-route": "^3.2.0",
+    "koa-static": "^5.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon serve.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anbossx/table-system-node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anbossx/table-system-node/issues"
+  },
+  "homepage": "https://github.com/anbossx/table-system-node#readme"
+}
