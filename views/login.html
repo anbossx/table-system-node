@@ -1,0 +1,40 @@
+<div id="app">
+    <div style="width: 600px;height: 500px;display: inline-block;margin-top: 200px;margin-left: 600px">
+        <div >
+       <span style="color: white">
+        账号:
+       </span>
+            <span style="display: inline-block">
+        <i-input v-model="number" placeholder="请输入账号" style="width: 300px" />
+      </span>
+        </div>
+        <div style="margin-top: 20px">
+            <span style="color: white">密码:</span>
+            <span style="display: inline-block">
+             <i-input v-model="password" placeholder="请输入密码" style="width: 300px" />
+        </span>
+        </div>
+        <div style="margin-left: 100px;margin-top: 10px">
+        <i-button @click="loginMethod">登陆</i-button>
+        </div>
+    </div>
+</div>
+
+<script>
+    let vm=new Vue({
+        el:'#app',
+        data(){
+            return{
+                number:'',
+                password:''
+            }
+        },
+        methods:{
+            loginMethod(){
+                axios.post('/login/test').then((response)=>{
+                    console.log(response)
+                })
+            }
+        }
+    })
+</script>

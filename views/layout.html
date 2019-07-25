@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>koa ejs</title>
+    <script src="js/vue.js"></script>
+    <script src="js/iview.min313.js"></script>
+    <script src="js/axios.min.js"></script>
+    <link rel="stylesheet" href="css/iview.css">
+    <style>
+        body{
+           margin: 0px;
+        }
+        .bodyContainer{
+            background-color: #5D6A78;
+            width: 100%;
+            height: 100%;
+
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bodyContainer">
+        <%- body %>
+    </div>
+
+<!--<script>-->
+   <!--let loginurl=window.location.pathname;-->
+   <!--var vm=new Vue({-->
+       <!--el:'#app',-->
+       <!--data(){-->
+          <!--return{-->
+              <!--pathname: loginurl-->
+          <!--}-->
+       <!--}-->
+   <!--});-->
+
+   <!--console.log(loginurl)-->
+<!--</script>-->
+</body>
+</html>
