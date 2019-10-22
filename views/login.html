@@ -5,7 +5,7 @@
         账号:
        </span>
             <span style="display: inline-block">
-        <i-input v-model="number" placeholder="请输入账号" style="width: 300px" />
+        <i-input v-model="user" placeholder="请输入账号" style="width: 300px" />
       </span>
         </div>
         <div style="margin-top: 20px">
@@ -25,13 +25,18 @@
         el:'#app',
         data(){
             return{
-                number:'',
+                user:'',
                 password:''
             }
         },
         methods:{
             loginMethod(){
-                axios.post('/login/test').then((response)=>{
+                axios.post('/login/test',{
+
+                        user:this.user,
+                        password:this.password,
+
+                }).then((response)=>{
                     console.log(response)
                 })
             }

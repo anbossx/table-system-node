@@ -5,6 +5,7 @@ const test=require('./static/text');
 const path = require('path');
 const compose=require('koa-compose');//合并中间件
 const render=require('koa-ejs');
+const bodyparser=require('koa-bodyparser');
 const app=new Koa();
 const router=new coaRouter();
 const indexroute=require('./router');
@@ -24,6 +25,7 @@ render(app,{
 //     next()
 // });
 app.use(koastatic(path.join(__dirname,'static')));
+app.use(bodyparser());
 // app.use(router.routes()).use(router.allowedMethods());
 app.use(indexroute.routes()).use(indexroute.allowedMethods());
 app.listen(3001,()=>{
