@@ -18,6 +18,20 @@ class userSchema{
         },option);
 
     }
+    //获取需要设置权限的用户
+    static async getPowerUser(params){
+        return await nav.find({
+            name:params
+        })
+    }
+    static async setPower(params){
+        let option={};
+        option['$set']={};
+         option['$set']['roles.'+params.line]=params.newPowerList;
+        return await nav.update({
+            name:params.byPowerUser
+        },option)
+    }
 }
 
 module.exports=userSchema;

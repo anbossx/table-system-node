@@ -20,6 +20,7 @@ class loginSchema{
         });
 
     }
+
 }
 
 module.exports=loginSchema;

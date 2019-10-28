@@ -1,7 +1,7 @@
 const navslider=require('../model/web_nav');
 const checkpow=require('../model/user');
 class navController{
-    //每次切换业务线获取到该业务线的目录
+    //每次切换业务线获取到该业务线的目录（带权限验证）
     static async getnav(ctx,next){
         let req = ctx.query;
         let powernav=await checkpow.checkpower(req);
@@ -27,6 +27,22 @@ class navController{
 
 
     };
+    //根据业务线获取到业务线下的目录 （不带权限验证）
+    static async getAllnav(ctx,next){
+        let req=ctx.query.line;
+        let result=await navslider.webAllnav(req);
+        try {
+            ctx.body={
+                code:200,
+                data:result
+            }
+        }catch (e) {
+            ctx.body={
+                code:1001,
+                data:e
+            }
+        }
+    }
     //增加目录
     static async setnav(ctx,next){
         let req = ctx.request.body;

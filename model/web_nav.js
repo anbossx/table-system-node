@@ -3,7 +3,6 @@ const Monk = require('monk');
 var db = require('monk')('127.0.0.1:27017/webServer');
 
 class navSchema{
-
     //客户获取目录
     static async webnav(params,PageIdList){
         let dbType=params.line+'_nav';
@@ -21,6 +20,12 @@ class navSchema{
 
 
         })
+    }
+    static async webAllnav(line){
+        let dbType=line+'_nav';
+        let nav=db.get(dbType);
+        return await nav.find();
+
     }
     //给客户端增加目录
     static async setnav(params,serveLine){
