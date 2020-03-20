@@ -3,7 +3,6 @@
 class loginController{
     //管理端登陆
     static  async loginTest(ctx,next){
-
         let req = ctx.request.body;
           if(req.user && req.password){
               try {
@@ -32,6 +31,7 @@ class loginController{
         if(req.user && req.password){
             try {
                 let result=await adminLogin.LoginWeb(req);
+                console.log(result);
                 let firturl=util.retOneLine(result[0].roles);
                 let worksLine=util.worksLines(result[0].roles);
                 ctx.body = {
